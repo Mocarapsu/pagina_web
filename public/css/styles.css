@@ -2,33 +2,41 @@
 html, body {
     height: 100%;
     margin: 0;
+    overflow-x: hidden; 
+    overflow-y:visible; ;
     font-family: 'Inter', sans-serif;
 }
 /* Fondo del encabezado */
+@keyframes moveBackground {
+    0% {
+        background-size: 30% 30%;
+        background-position: 0% 0%;
+    }
+    50% {
+        background-size: 30% 30%;
+        background-position: -100% -100%;
+    }
+    100% {
+        background-size: 30% 30%;
+        background-position: 0% 0%;
+    }
+}
+
 .header-background {
     position: relative;
-   /* min-height: 100vh;*/
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    padding-top: 6rem; /* Aumenté el padding para mayor separación desde el top */
-    background: radial-gradient(circle at center, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1)); /* El 'at center' asegura que el gradiente se origine en el centro */
-    background-size: 35% 35%; /* Ajusta el tamaño del fondo para que cubra todo */
-    /*background-position: center center; /* Garantiza que el fondo se mantenga centrado */
-    transition: background 5.3s ease; /* Transición suave para cambios de fondo */
-
-}
-
-/* Puedes añadir un hover para mejorar la interacción */
-.header-background:hover {
-    background: radial-gradient(circle, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1));
+    padding-top: 6rem;
+    background: radial-gradient(circle at center, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1));
+    background-size: 25% 25%; /* Mantén el tamaño del fondo */
+    animation: moveBackground 25.3s linear infinite; /* Animación constante */
 }
 
 
-/* Imagen de fondo */
+/* Imagen de fondo 
 .header-background-image {
     position: absolute;
     top: 0;
@@ -36,9 +44,8 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Asegura que la imagen esté detrás del contenido */
-}
-
+    z-index: -1; /* Asegura que la imagen esté detrás del contenido 
+}*/
 /* Títulos y descripciones */
 .header-title {
     font-size: 3.5rem;
@@ -69,6 +76,7 @@ nav {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     letter-spacing: 1.5px;
+    padding: 0.5rem 1rem;   
 }
 
 .nav-link {
@@ -100,7 +108,7 @@ nav {
 .benefit-card {
     background: white;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
