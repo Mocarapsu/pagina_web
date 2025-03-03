@@ -36,18 +36,21 @@
         <div class="my-6 text-center text-gray-600">O regístrate con</div>
 
         <div class="flex justify-center gap-4">
-            <button class="flex items-center justify-start gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-blue-100">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="20"> 
-                <span class="text-sm text-gray-700">Facebook</span>
-            </button>
-            <button class="flex items-center justify-start gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">
-                <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" width="20"> 
-                <span class="text-sm text-gray-700">Google</span>
-            </button>
-        </div>
+    <a href="{{ url('/auth/facebook') }}" class="flex items-center justify-start gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-blue-100">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="20">
+        <span class="text-sm text-gray-700">Facebook</span>
+    </a>
+    <a href="{{ url('/auth/google') }}" class="flex items-center justify-start gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">
+        <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" width="20">
+        <span class="text-sm text-gray-700">Google</span>
+    </a>
+</div>
+
 
         <p class="mt-6 text-center text-sm text-gray-600">
             ¿Ya tienes una cuenta? <a href="#" onclick="closeRegisterModal(); openLoginModal();" class="text-blue-500 hover:underline">Inicia sesión</a>
         </p>
     </div>
 </div>
+
+

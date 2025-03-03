@@ -4,27 +4,57 @@ html, body {
     margin: 0;
     font-family: 'Inter', sans-serif;
 }
-/* Estilo base de las tarjetas */
-.benefit-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza el cambio */
-}
-.benefit-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+/* Fondo del encabezado */
+.header-background {
+    position: relative;
+   /* min-height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+    padding-top: 6rem; /* Aumenté el padding para mayor separación desde el top */
+    background: radial-gradient(circle at center, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1)); /* El 'at center' asegura que el gradiente se origine en el centro */
+    background-size: 35% 35%; /* Ajusta el tamaño del fondo para que cubra todo */
+    /*background-position: center center; /* Garantiza que el fondo se mantenga centrado */
+    transition: background 5.3s ease; /* Transición suave para cambios de fondo */
+
 }
-/* Base styles */
-html, body {
+
+/* Puedes añadir un hover para mejorar la interacción */
+.header-background:hover {
+    background: radial-gradient(circle, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1));
+}
+
+
+/* Imagen de fondo */
+.header-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+    object-fit: cover;
+    z-index: -1; /* Asegura que la imagen esté detrás del contenido */
+}
+
+/* Títulos y descripciones */
+.header-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-description {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Barra de navegación */
@@ -33,7 +63,6 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobix (nombre de la marca) */
 .nav-brand {
     font-size: 2rem;
     font-weight: 700;
@@ -42,7 +71,6 @@ nav {
     letter-spacing: 1.5px;
 }
 
-/* Enlaces de la barra de navegación */
 .nav-link {
     font-size: 0.9rem;
     font-weight: 200;
@@ -54,10 +82,9 @@ nav {
     transform: translateY(-2px);
 }
 
-/* Botones de "Registrarse" e "Iniciar sesión" */
 .nav-button {
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-block;
@@ -69,39 +96,37 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Fondo de la página de inicio */
-.header-background {
-    background: radial-gradient(circle, rgb(39, 102, 138), rgb(6, 45, 73));
-    color: white;
-}
-
-/* Título del parquímetro */
-.header-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Descripción debajo del título */
-.header-description {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.8;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Card styles (Beneficios, etc.) */
+/* Estilos de las tarjetas */
 .benefit-card {
-    transition: all 0.3s ease;
     background: white;
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: 12px;
     padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
 }
+
+
+.benefit-card2 {
+    background-color: white;
+    padding: 7rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.benefit-card2:hover {
+    transform: translateY(-0.75rem);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
 
 .benefit-card:hover {
     transform: translateY(-10px);
@@ -134,81 +159,37 @@ nav {
 
 /* Estilos de los modales */
 .modal-overlay {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    justify-content: center;
+    align-items: center;
     backdrop-filter: blur(5px);
 }
 
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
-    padding: 2rem;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: #718096;
 }
 
-.modal-close:hover {
-    color: hsl(218, 23%,  23%);
-}
-
-.modal-title {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 500;
-    margin-bottom: 0.1rem;
-}
-
-.modal-subtitle {
-    text-align: center;
-    font-size: 1.25rem;
-    margin-bottom: 0.1rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #4a5568;
-    font-weight: 500;
-}
-
-.form-input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    transition: border-color 0.3s ease;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #27668a;
-}
-
+/* Estilos de botones y enlaces */
 .form-button {
     width: 100%;
     padding: 0.75rem;
@@ -282,258 +263,43 @@ nav {
     text-decoration: none;
     font-weight: 500;
 }
+
+/* Estilos de los modales */
 .modal-overlay {
+    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex; /* Cambia a flex para centrar el modal */
-    justify-content: center;
-    align-items: center;
-}
-
-.modal {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    position: relative;
-    display: flex; /* Cambia a flex para centrar el contenido */
-    flex-direction: column;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-.benefit-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.benefit-card h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1a202c;
-    margin-bottom: 1rem;
-}
-
-.benefit-card p {
-    font-size: 1rem;
-    color: #4a5568;
-    line-height: 1.6;
-}
-
-/* Efecto hover */
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
-}
-
-.benefit-card:hover img {
-    transform: scale(1.1);
-}
-
-
-/* Efecto de "salto" al pasar el mouse */
-.benefit-card:hover {
-    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1); /* Sombra para mayor profundidad */
-}
-
-/* Contenedor del encabezado con imagen de fondo */
-.header-background {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 2rem;
-    overflow: hidden;
-    background: radial-gradient(circle, rgb(39, 102, 138), rgb(6, 45, 73));
-}
-
-/* Imagen de fondo atrás */
-.header-background-image {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/* Títulos y descripciones */
-.header-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.header-description {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.8;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Tarjetas de beneficios */
-.benefit-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 10;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-}
-
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.benefit-card img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.0rem;
-    transition: transform 0.3s ease;
-}
-
-.benefit-card:hover img {
-    transform: scale(1.1);
-}
-
-.benefit-card h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 1rem;
-}
-
-.benefit-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a5568;
-}
-
-/* Barra de navegación */
-nav {
-    background: rgb(39, 102, 138);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-brand {
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1.5px;
-}
-
-.nav-link {
-    font-size: 0.9rem;
-    font-weight: 200;
-    padding: 0.5rem 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-    transform: translateY(-2px);
-}
-
-.nav-button {
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    width: auto;
-}
-
-.nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos de los modales */
-.modal-overlay {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
     z-index: 1000;
-    justify-content: center;
-    align-items: center;
     backdrop-filter: blur(5px);
 }
 
 .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
 }
 
 .modal-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1rem;
+    right: 1rem;
     cursor: pointer;
+    font-size: 1.5rem;
+    color: #718096;
 }
 
-/* Card image styling */
-.card-image {
-    width: 100%;
-    height: auto;
-    max-width: 150px;
-    margin: 0 auto 1rem;
-}
-
-/* Fondo del encabezado */
-.header-background {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 2rem;
-    overflow: hidden;
-    background: radial-gradient(circle, rgb(39, 102, 138), rgb(6, 45, 73));
-    z-index: -1; /* Asegura que el fondo quede al fondo */
-}
-
-/* Imagen de fondo */
-.header-background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2; /* Asegura que esté detrás del contenedor */
+.modal-close:hover {
+    color: hsl(218, 23%,  23%);
 }
