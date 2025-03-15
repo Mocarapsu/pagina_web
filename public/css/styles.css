@@ -9,15 +9,15 @@ html, body {
 /* Fondo del encabezado */
 @keyframes moveBackground {
     0% {
-        background-size: 30% 30%;
+        background-size: 18% 18%;
         background-position: 0% 0%;
     }
     50% {
-        background-size: 30% 30%;
+        background-size: 18% 18%;
         background-position: -100% -100%;
     }
     100% {
-        background-size: 30% 30%;
+        background-size: 18% 18%;
         background-position: 0% 0%;
     }
 }
@@ -32,7 +32,7 @@ html, body {
     padding-top: 6rem;
     background: radial-gradient(circle at center, rgba(39, 102, 138, 1), rgba(6, 45, 73, 1));
     background-size: 25% 25%; /* Mantén el tamaño del fondo */
-    animation: moveBackground 25.3s linear infinite; /* Animación constante */
+    animation: moveBackground 30.3s linear infinite; /* Animación constante */
 }
 
 

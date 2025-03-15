@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::parking;
 
     /**
      * Create a new controller instance.
@@ -47,6 +47,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    protected function registered(Request $request, $user)
+{
+    return redirect('/parking');   // Asegúrate de que 'parking.page' sea el nombre de la ruta
+}
+
+
     protected function validator(array $data)
     {
         return Validator::make($data, [

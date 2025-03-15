@@ -2,17 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\ParkingController;  // Asegúrate de que el controlador esté importado
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('home');
@@ -23,10 +16,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-use Laravel\Socialite\Facades\Socialite;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+// Ruta de Parking
+Route::get('/parking', [ParkingController::class, 'index'])->name('parking.page');
 
+// Rutas para autenticación social
 Route::get('/auth/{provider}', function ($provider) {
     return Socialite::driver($provider)->redirect();
 });
@@ -45,5 +38,6 @@ Route::get('/auth/{provider}/callback', function ($provider) {
 
     Auth::login($user);
 
-    return redirect('/dashboard'); // Cambia esto a la ruta que prefieras
+    // Redirigir después de la autenticación
+    return redirect('/parking');  // Aquí rediriges a la página de parking después de iniciar sesión
 });

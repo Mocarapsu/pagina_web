@@ -11,12 +11,12 @@
             @csrf
             <div class="mb-4 text-left">
                 <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-                <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su correo" required>
+                <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" placeholder="Ingrese su correo" required>
             </div>
 
             <div class="mb-4 text-left">
                 <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
-                <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ingrese su contraseña" required>
+                <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black" placeholder="Ingrese su contraseña" required>
             </div>
 
             <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Iniciar Sesión</button>
